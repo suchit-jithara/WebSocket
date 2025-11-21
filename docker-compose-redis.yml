@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: redis_server
+    restart: always
+    ports:
+      - "6379:6379"   # Exposes Redis to host
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "password"]
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
+    driver: local
