@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChatMessage {
-    private String from;
-    private String to;
-    private String message;
+public class WebSocketPayload {
+
+    private String destination;
+    private Object body;
 }

@@ -12,14 +12,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws")       // WebSocket endpoint
+        registry.addEndpoint("/chat") // entry point URL = ws://localhost:8080/chat
                 .setAllowedOriginPatterns("*")
-                .withSockJS();           // fallback
+                .withSockJS();           // fallback // If the browser cannot create a real WebSocket (old browser, blocked network, corporate network), then use SockJS fallback like: AJAX long polling, HTTP streaming
     }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/topic");  // where clients subscribe
+        registry.enableSimpleBroker("/topic", "/queue");  // where clients subscribe
         registry.setApplicationDestinationPrefixes("/app"); // client sends here
     }
 }
