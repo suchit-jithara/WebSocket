@@ -1,16 +1,72 @@
-version: '3.9'
+version: "3.8"
 
 services:
-  redis:
-    image: redis:7.2-alpine
-    container_name: redis_server
-    restart: always
-    ports:
-      - "6379:6379"   # Exposes Redis to host
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "password"]
+  redis-7000:
+    image: redis:7
+    container_name: redis-7000
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     volumes:
-      - redis_data:/data
+      - ./7000/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/7000:/data
+    ports:
+      - "7000:7000"
+      - "17000:17000"
 
-volumes:
-  redis_data:
-    driver: local
+  redis-7001:
+    image: redis:7
+    container_name: redis-7001
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./7001/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/7001:/data
+    ports:
+      - "7001:7001"
+      - "17001:17001"
+
+  redis-7002:
+    image: redis:7
+    container_name: redis-7002
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./7002/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/7002:/data
+    ports:
+      - "7002:7002"
+      - "17002:17002"
+
+  redis-7003:
+    image: redis:7
+    container_name: redis-7003
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./7003/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/7003:/data
+    ports:
+      - "7003:7003"
+      - "17003:17003"
+
+  redis-7004:
+    image: redis:7
+    container_name: redis-7004
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./7004/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/7004:/data
+    ports:
+      - "7004:7004"
+      - "17004:17004"
+
+  redis-7005:
+    image: redis:7
+    container_name: redis-7005
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./7005/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/7005:/data
+    ports:
+      - "7005:7005"
+      - "17005:17005"
+
+networks:
+  default:
+    driver: bridge
