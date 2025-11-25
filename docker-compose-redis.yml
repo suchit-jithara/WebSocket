@@ -4,9 +4,13 @@ services:
   redis-7000:
     image: redis:7
     container_name: redis-7000
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf",
+       "--port", "7000",
+       "--cluster-announce-port", "7000",
+       "--cluster-announce-bus-port", "17000"]
     volumes:
-      - ./7000/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./data/7000:/data
     ports:
       - "7000:7000"
@@ -15,9 +19,13 @@ services:
   redis-7001:
     image: redis:7
     container_name: redis-7001
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf",
+       "--port", "7001",
+       "--cluster-announce-port", "7001",
+       "--cluster-announce-bus-port", "17001"]
     volumes:
-      - ./7001/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./data/7001:/data
     ports:
       - "7001:7001"
@@ -26,9 +34,13 @@ services:
   redis-7002:
     image: redis:7
     container_name: redis-7002
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf",
+       "--port", "7002",
+       "--cluster-announce-port", "7002",
+       "--cluster-announce-bus-port", "17002"]
     volumes:
-      - ./7002/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./data/7002:/data
     ports:
       - "7002:7002"
@@ -37,9 +49,13 @@ services:
   redis-7003:
     image: redis:7
     container_name: redis-7003
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf",
+       "--port", "7003",
+       "--cluster-announce-port", "7003",
+       "--cluster-announce-bus-port", "17003"]
     volumes:
-      - ./7003/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./data/7003:/data
     ports:
       - "7003:7003"
@@ -48,9 +64,13 @@ services:
   redis-7004:
     image: redis:7
     container_name: redis-7004
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf",
+       "--port", "7004",
+       "--cluster-announce-port", "7004",
+       "--cluster-announce-bus-port", "17004"]
     volumes:
-      - ./7004/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./data/7004:/data
     ports:
       - "7004:7004"
@@ -59,9 +79,13 @@ services:
   redis-7005:
     image: redis:7
     container_name: redis-7005
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf",
+       "--port", "7005",
+       "--cluster-announce-port", "7005",
+       "--cluster-announce-bus-port", "17005"]
     volumes:
-      - ./7005/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./data/7005:/data
     ports:
       - "7005:7005"
