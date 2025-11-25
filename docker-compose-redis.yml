@@ -4,6 +4,7 @@ services:
   redis-7000:
     image: redis:7
     container_name: redis-7000
+    restart: always
     command:
       ["redis-server", "/usr/local/etc/redis/redis.conf",
        "--port", "7000",
@@ -19,6 +20,7 @@ services:
   redis-7001:
     image: redis:7
     container_name: redis-7001
+    restart: always
     command:
       ["redis-server", "/usr/local/etc/redis/redis.conf",
        "--port", "7001",
@@ -34,6 +36,7 @@ services:
   redis-7002:
     image: redis:7
     container_name: redis-7002
+    restart: always
     command:
       ["redis-server", "/usr/local/etc/redis/redis.conf",
        "--port", "7002",
@@ -49,6 +52,7 @@ services:
   redis-7003:
     image: redis:7
     container_name: redis-7003
+    restart: always
     command:
       ["redis-server", "/usr/local/etc/redis/redis.conf",
        "--port", "7003",
@@ -64,6 +68,7 @@ services:
   redis-7004:
     image: redis:7
     container_name: redis-7004
+    restart: always
     command:
       ["redis-server", "/usr/local/etc/redis/redis.conf",
        "--port", "7004",
@@ -79,6 +84,7 @@ services:
   redis-7005:
     image: redis:7
     container_name: redis-7005
+    restart: always
     command:
       ["redis-server", "/usr/local/etc/redis/redis.conf",
        "--port", "7005",
